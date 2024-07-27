@@ -47,6 +47,7 @@ function App() {
     </Route>
   ));
   
+  console.log(contactList);
   return (
     <RouterProvider router={router}/>
   );
