@@ -9,7 +9,7 @@ export const AppointmentsPage = ({
   addAppointment
 }) => {
   const [title, setTitle] = useState("");
-  const [contact, setContact] = useState(undefined);
+  const [contact, setContact] = useState("");
   const [date, setDate] = useState(undefined);
   const [time, setTime] = useState(undefined);
   /*
@@ -22,9 +22,9 @@ export const AppointmentsPage = ({
 
     addAppointment(title, contact, date, time);
     setTitle("");
-    setContact({});
-    setDate("");
-    setTime("");
+    setContact(undefined);
+    setDate(undefined);
+    setTime(undefined);
     /*
     Add contact info and clear data  
     */

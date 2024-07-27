@@ -15,11 +15,11 @@ export const ContactsPage = (props) => {
   contact info and duplicate check
   */
   useEffect(() => {
+    setIsDuplicate(false);
+
     for (const contact of contactList) {
       if(name.toLowerCase() === contact.name.toLowerCase()) {
         setIsDuplicate(true);
-      } else {
-        setIsDuplicate(false);
       }
     }
   }, [name]);

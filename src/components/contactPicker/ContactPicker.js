@@ -9,8 +9,9 @@ export const ContactPicker = ({
   return (
     <>
       <select onChange={onChange} value={value}>
+        <option value="">No contact selected</option>
         {contacts.map((contact) => {
-          <option value={contact.name}>{contact.name}</option>
+          return <option value={contact.name}>{contact.name}</option>
         })}
       </select>
     </>
