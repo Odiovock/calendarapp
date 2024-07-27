@@ -31,7 +31,7 @@ function App() {
       time
     }
 
-    setAppointmentList((prev) => prev.push(newAppointment));
+    setAppointmentList((prev) => [...prev, newAppointment]);
   }
 
   /*
@@ -43,11 +43,10 @@ function App() {
     <Route path="/" element={ <Root/> }>
       <Route index element={ <Navigate to={ROUTES.CONTACTS} replace/> }/>
       <Route path={ROUTES.CONTACTS} element={ <ContactsPage contactList={contactList} addContact={addContact} /> }/>
-      <Route path={ROUTES.APPOINTMENTS} element={ <AppointmentsPage contactList={contactList} addAppointment={addAppointment} setAppointmentList={setAppointmentList}/> }/>
+      <Route path={ROUTES.APPOINTMENTS} element={ <AppointmentsPage contactList={contactList} appointmentList={appointmentList} addAppointment={addAppointment} /> }/>
     </Route>
   ));
   
-  console.log(contactList);
   return (
     <RouterProvider router={router}/>
   );
